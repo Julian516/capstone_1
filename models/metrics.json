@@ -1,0 +1,18 @@
+[
+  {
+    "model": "log_reg",
+    "val_auc": 0.8711796540829719
+  },
+  {
+    "model": "random_forest",
+    "val_auc": 0.9307455117879833
+  },
+  {
+    "model": "xgboost",
+    "val_auc": 0.9494655000835047
+  },
+  {
+    "model": "xgboost_smote",
+    "val_auc": 0.9385196043113336
+  }
+]
