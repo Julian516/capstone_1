@@ -20,9 +20,10 @@ except ModuleNotFoundError:  # pragma: no cover - fallback for direct script run
     sys.path.append(str(Path(__file__).resolve().parent.parent))
     from src.preprocess import CAT_FEATURES, NUM_FEATURES, clip_outliers
 
-MODELS_DIR = "models"
-PREPROCESSOR_PATH = f"{MODELS_DIR}/preprocessor.pkl"
-MODEL_PATH = f"{MODELS_DIR}/best_model.pkl"
+BASE_DIR = Path(__file__).resolve().parent.parent
+MODELS_DIR = BASE_DIR / "models"
+PREPROCESSOR_PATH = MODELS_DIR / "preprocessor.pkl"
+MODEL_PATH = MODELS_DIR / "best_model.pkl"
 THRESHOLD = 0.5
 
 app = FastAPI(title="Credit Risk API", version="0.1.0")

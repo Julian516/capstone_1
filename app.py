@@ -2,11 +2,20 @@ import joblib
 import pandas as pd
 import streamlit as st
 import shap
+from pathlib import Path
 
-from src.preprocess import CAT_FEATURES, NUM_FEATURES, clip_outliers
+# Allow running as `streamlit run app.py` from project root
+try:
+    from src.preprocess import CAT_FEATURES, NUM_FEATURES, clip_outliers
+except ModuleNotFoundError:  # pragma: no cover - fallback for direct script run
+    import sys
 
-MODEL_PATH = "models/best_model.pkl"
-PREPROCESSOR_PATH = "models/preprocessor.pkl"
+    sys.path.append(str(Path(__file__).resolve().parent))
+    from src.preprocess import CAT_FEATURES, NUM_FEATURES, clip_outliers
+
+BASE_DIR = Path(__file__).resolve().parent
+MODEL_PATH = BASE_DIR / "models" / "best_model.pkl"
+PREPROCESSOR_PATH = BASE_DIR / "models" / "preprocessor.pkl"
 
 
 @st.cache_resource(show_spinner=False)

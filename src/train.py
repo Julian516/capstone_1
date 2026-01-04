@@ -40,8 +40,9 @@ except ModuleNotFoundError:  # pragma: no cover - fallback for direct script run
         clip_outliers,
     )
 
-DATA_PATH = Path("data/raw/credit_risk_dataset.csv")
-MODELS_DIR = Path("models")
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_PATH = BASE_DIR / "data" / "raw" / "credit_risk_dataset.csv"
+MODELS_DIR = BASE_DIR / "models"
 TARGET_COL = "loan_status"
 RANDOM_STATE = 42
 

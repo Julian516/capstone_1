@@ -100,8 +100,8 @@ Open `http://localhost:8501`, fill the form, and you’ll get the default probab
 │   ├── preprocess.py        # build_preprocessor() with clipping + CT
 │   ├── train.py             # train Logistic/RF/XGB, save best + preprocessor
 │   └── predict.py           # FastAPI /predict using saved artifacts
-│── models/
-│   ├── best_model.pkl 
+├── models/
+│   ├── best_model.pkl
 │   ├── metrics.json
 │   └── preprocessor.pkl
 ├── app.py                   # Streamlit UI (local)
