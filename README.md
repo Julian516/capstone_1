@@ -9,6 +9,10 @@
 
 **Model deployment**: XGBoost probability via FastAPI → threshold decisions (>0.5=deny).
 
+## Conclusion
+
+We built and validated a credit-risk model (XGBoost ~0.95 AUC) with clear risk drivers (interest rate, payment-to-income ratio, loan grade, prior default flag), exposed it via FastAPI/Docker for scoring, and provided a local Streamlit UI for interactive testing. This enables risk-based approvals/pricing and can be tuned by adjusting the decision threshold to balance approvals vs. expected loss.
+
 ## EDA Summary
 
 - Target is imbalanced (~20% defaults) → use ROC-AUC/PR-AUC and class weights or SMOTE.  
